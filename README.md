@@ -6,8 +6,8 @@
 
 | 插件 | 描述 | 模型 | 版本 |
 |------|------|------|------|
-| [Qwen3 TTS](./plugins/tts/) | 语音合成，支持 48 种音色和指令级风格控制 | Qwen3-TTS-Instruct-Flash / Flash | v2.0.0 |
-| [Qwen VL OCR](./plugins/ocr/) | 高精度文字识别，支持多语言和复杂排版 | Qwen-VL-OCR | v1.0.0 |
+| [Qwen3 TTS](./plugins/tts/) | 语音合成，支持 48 种音色和指令级风格控制 | Qwen3-TTS-Instruct-Flash / Flash | v1.1.0 |
+| [Qwen VL OCR](./plugins/ocr/) | 高精度文字识别，支持多语言和复杂排版 | Qwen-VL-OCR | v1.1.0 |
 
 ## 安装方法
 

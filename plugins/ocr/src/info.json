@@ -1,6 +1,6 @@
 {
     "identifier": "com.qwen3.ocr.bob.plugin",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "category": "ocr",
     "name": "Qwen VL OCR",
     "summary": "基于阿里云 Qwen-VL-OCR 模型的高精度文字识别，支持多语言和复杂排版",

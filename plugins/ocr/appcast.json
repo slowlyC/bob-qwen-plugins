@@ -2,10 +2,10 @@
     "identifier": "com.qwen3.ocr.bob.plugin",
     "versions": [
         {
-            "version": "1.0.0",
-            "desc": "v1.0.0 首次发布：\n• 基于 Qwen-VL-OCR 模型的高精度文字识别\n• 支持多语言识别（中/英/日/韩等）\n• 支持自定义模型名称\n• 自动检测图片格式\n• 弱网自动重试",
-            "sha256": "646eedffec31fab2f47c65a7a16a47f041f97fb9f719ce8b87a6cb5134cfa7cf",
-            "url": "https://github.com/slowlyC/bob-qwen-plugins/releases/download/ocr-v1.0.0/qwen3-ocr.bobplugin",
+            "version": "1.1.0",
+            "desc": "v1.1.0 更新内容：\n• 基于 Qwen-VL-OCR 模型的高精度文字识别\n• 支持多语言识别（中/英/日/韩等）\n• 支持自定义模型名称\n• 自动检测图片格式\n• 弱网自动重试",
+            "sha256": "585617747cc74a86962eee94430541b8af6fb2fb60293d09a95828c2e0e514e9",
+            "url": "https://github.com/slowlyC/bob-qwen-plugins/releases/download/v1.1.0/qwen3-ocr.bobplugin",
             "minBobVersion": "1.6.0"
         }
     ]

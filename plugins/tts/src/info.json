@@ -1,6 +1,6 @@
 {
     "identifier": "com.qwen3.tts.bob.plugin",
-    "version": "2.0.0",
+    "version": "1.1.0",
     "category": "tts",
     "name": "Qwen3 TTS",
     "summary": "基于阿里云 Qwen3-TTS 系列模型的高质量语音合成，支持指令控制语速/情感/音调",
