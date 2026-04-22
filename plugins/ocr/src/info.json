@@ -6,8 +6,8 @@
     "summary": "基于阿里云 Qwen-VL-OCR 模型的高精度文字识别，支持多语言和复杂排版",
     "icon": "doc.text.magnifyingglass",
     "author": "slowlyC",
-    "homepage": "https://github.com/slowlyC/qwen3-tts-plugin",
-    "appcast": "https://raw.githubusercontent.com/slowlyC/qwen3-tts-plugin/main/plugins/ocr/appcast.json",
+    "homepage": "https://github.com/slowlyC/bob-qwen-plugins",
+    "appcast": "https://raw.githubusercontent.com/slowlyC/bob-qwen-plugins/main/plugins/ocr/appcast.json",
     "minBobVersion": "1.6.0",
     "options": [
         {

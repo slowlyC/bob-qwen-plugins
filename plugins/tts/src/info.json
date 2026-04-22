@@ -6,8 +6,8 @@
     "summary": "基于阿里云 Qwen3-TTS 系列模型的高质量语音合成，支持指令控制语速/情感/音调",
     "icon": "microphone",
     "author": "slowlyC",
-    "homepage": "https://github.com/slowlyC/qwen3-tts-plugin",
-    "appcast": "https://raw.githubusercontent.com/slowlyC/qwen3-tts-plugin/main/plugins/tts/appcast.json",
+    "homepage": "https://github.com/slowlyC/bob-qwen-plugins",
+    "appcast": "https://raw.githubusercontent.com/slowlyC/bob-qwen-plugins/main/plugins/tts/appcast.json",
     "minBobVersion": "1.6.0",
     "options": [
         {
