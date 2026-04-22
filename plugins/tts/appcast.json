@@ -4,7 +4,7 @@
         {
             "version": "1.1.1",
             "desc": "v1.1.1 更新内容：\n• 支持 Qwen3-TTS-Instruct-Flash 模型（指令控制语速/情感/音调）\n• 支持 Qwen3-TTS-Flash 高速合成\n• 支持自定义模型名称\n• 合成语种配置，提升单语种合成质量\n• 语音指令和指令语义增强\n• 48 种官方音色\n• 智能模型降级，增强错误处理",
-            "sha256": "eef6c15e0bd52cd5fbe57f7e360efd37d50eb67a75d85a3ce43d3e9d823aff62",
+            "sha256": "dac2fccdad82da6aa41f8276a40579df551554454b46c8bf6ae44477aca27abb",
             "url": "https://github.com/slowlyC/bob-qwen-plugins/releases/download/v1.1.1/qwen3-tts.bobplugin",
             "minBobVersion": "1.6.0"
         }

@@ -192,17 +192,10 @@ function tts(query, completion) {
         instructions = '';
     }
 
-    // 文本长度保护
+    // 文本长度保护：超长时自动截断
     var maxChars = getMaxChars(model);
     if (text.length > maxChars) {
-        completion({
-            error: {
-                type: 'param',
-                message: '文本过长 (' + text.length + ' 字符)，当前模型限制 ' + maxChars + ' 字符',
-                addition: '请尝试分段朗读'
-            }
-        });
-        return;
+        text = text.substring(0, maxChars);
     }
 
     // 构建请求体
