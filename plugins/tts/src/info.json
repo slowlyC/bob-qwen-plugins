@@ -7,7 +7,7 @@
     "icon": "microphone",
     "author": "slowlyC",
     "homepage": "https://github.com/slowlyC/qwen3-tts-plugin",
-    "appcast": "https://raw.githubusercontent.com/slowlyC/qwen3-tts-plugin/main/appcast.json",
+    "appcast": "https://raw.githubusercontent.com/slowlyC/qwen3-tts-plugin/main/plugins/tts/appcast.json",
     "minBobVersion": "1.6.0",
     "options": [
         {

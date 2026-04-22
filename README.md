@@ -1,116 +1,57 @@
-# Bob Qwen3 TTS 插件
+# Bob Qwen Plugins
 
-基于阿里云 Qwen3-TTS 系列模型的 Bob 语音合成插件，支持 48 种官方音色和指令级语音风格控制。
+阿里云 Qwen 系列模型的 Bob 插件集合。
 
-## 功能特点
+## 插件列表
 
-- **双模型支持**：Instruct-Flash（指令控制，推荐）、Flash（高速）、支持自定义模型名称
-- **指令级风格控制**：通过自然语言描述精确调节语速、音调、情感（Instruct 模型专属）
-- **48 种官方音色**：涵盖普通话、8 种方言（北京/上海/四川/粤语等）、6 种外语特色
-- **智能模型降级**：自动识别音色与模型兼容性，无感切换
-- **合成语种指定**：显式指定语种可显著提升合成质量
-- **双地域支持**：国内（北京）/ 国际（新加坡）
-- **弱网自动重试**：5xx 错误和网络超时自动重试一次
-
-> 官方文档：[Qwen TTS API 说明](https://help.aliyun.com/zh/model-studio/qwen-tts)
+| 插件 | 描述 | 模型 | 版本 |
+|------|------|------|------|
+| [Qwen3 TTS](./plugins/tts/) | 语音合成，支持 48 种音色和指令级风格控制 | Qwen3-TTS-Instruct-Flash / Flash | v2.0.0 |
+| [Qwen VL OCR](./plugins/ocr/) | 高精度文字识别，支持多语言和复杂排版 | Qwen-VL-OCR | v1.0.0 |
 
 ## 安装方法
 
-### 方式一：直接下载（推荐）
-
 1. 前往 [Releases](../../releases) 页面
-2. 下载最新版本的 `qwen3-tts.bobplugin` 文件
-3. 双击该文件，Bob 会自动安装
+2. 下载所需插件的 `.bobplugin` 文件
+3. 双击文件，Bob 会自动安装
 
-### 方式二：手动打包
+## 配置
 
-1. 将 `src` 文件夹内所有文件打包为 ZIP
-2. 将扩展名改为 `.bobplugin`
-3. 双击安装
+两个插件共用同一个 DashScope API Key，可在 [阿里云百炼控制台](https://dashscope.console.aliyun.com/) 申请。
 
-## 配置说明
+## 构建
 
-### 获取 API Key
+```bash
+# 构建所有插件
+./scripts/build.sh all
 
-1. 访问 [阿里云百炼控制台](https://dashscope.console.aliyun.com/)
-2. 注册/登录后创建 API Key
-3. 将 API Key 填入插件配置
+# 仅构建某个插件
+./scripts/build.sh tts
+./scripts/build.sh ocr
+```
 
-### 配置选项
+构建产物输出到 `dist/` 目录。
 
-| 选项 | 说明 | 默认值 |
-|------|------|--------|
-| API Key | DashScope API Key（必填） | - |
-| API 地域 | 北京(国内) / 新加坡(国际) | 北京 |
-| 模型 | Instruct-Flash / Flash / 自定义 | Instruct-Flash |
-| 自定义模型 | 手动输入模型名称（选择「自定义模型」时生效） | 空 |
-| 语音角色 | 48 种音色可选 | Ethan |
-| 合成语种 | 指定语种或自动检测 | Auto |
-| 语音指令 | 自然语言描述风格（Instruct 专属） | 空 |
-| 指令语义增强 | 对指令进行语义重写 | 关闭 |
-| 超时时间 | 30-300 秒 | 60 |
+## 项目结构
 
-### 模型选择指南
+```
+├── plugins/
+│   ├── tts/                # TTS 语音合成插件
+│   │   ├── src/            # 插件源码
+│   │   └── appcast.json    # 更新清单
+│   └── ocr/                # OCR 文字识别插件
+│       ├── src/            # 插件源码
+│       └── appcast.json    # 更新清单
+├── scripts/
+│   └── build.sh            # 构建脚本
+├── README.md
+└── LICENSE
+```
 
-| 模型 | 特点 | 适用场景 |
-|------|------|----------|
-| **Instruct-Flash** | 支持指令控制语速/情感/音调（推荐） | 需要精细控制语音风格 |
-| **Flash** | 速度最快，音色最全(48种) | 日常高频使用 |
-| **自定义模型** | 手动填入任意模型名称 | 使用快照版本或新发布模型 |
+## 官方文档
 
-### 语音指令示例（Instruct-Flash 模型）
-
-选择 Instruct-Flash 模型后，可以在「语音指令」中用自然语言描述风格：
-
-| 场景 | 示例指令 |
-|------|----------|
-| 新闻播报 | `吐字清晰精准，字正腔圆` |
-| 广告配音 | `音调偏高，语速中等，充满活力和感染力` |
-| 温柔治愈 | `语速偏慢，音调温柔甜美，语气治愈温暖` |
-| 激动情绪 | `音量由正常迅速增强至高喊，性格直率，情绪激动` |
-| 时尚推荐 | `语速较快，带有明显的上扬语调，适合介绍时尚产品` |
-
-### 音色一览
-
-**支持 Instruct 指令控制的音色 [I]** (24种)：
-
-Cherry(芊悦)、Serena(苏瑶)、Ethan(晨煦)、Chelsie(千雪)、Momo(茉兔)、Vivian(十三)、Moon(月白)、Maia(四月)、Kai(凯)、Nofish(不吃鱼)、Bella(萌宝)、Eldric Sage(沧明子)、Mia(乖小妹)、Mochi(沙小弥)、Bellona(燕铮莺)、Vincent(田叔)、Bunny(萌小姬)、Neil(阿闻)、Elias(墨讲师)、Arthur(徐大爷)、Nini(邻家妹妹)、Seren(小婉)、Pip(顽屁小孩)、Stella(少女阿月)
-
-**仅 Flash 模型音色 [F]** (14种)：
-
-Jennifer(詹妮弗)、Ryan(甜茶)、Katerina(卡捷琳娜)、Aiden(艾登)、Bodega(博德加)、Sonrisa(索尼莎)、Alek(阿列克)、Dolce(多尔切)、Sohee(素熙)、Ono Anna(小野杏)、Lenn(莱恩)、Emilien(埃米尔安)、Andre(安德雷)、Radio Gol(拉迪奥)
-
-**方言/粤语音色 [F]** (10种)：
-
-Dylan(北京-晓东)、Jada(上海-阿珍)、Sunny(四川-晴儿)、Eric(四川-程川)、Marcus(陕西-秦川)、Li(南京-老李)、Peter(天津-李彼得)、Roy(闽南-阿杰)、Kiki(粤语-阿清)、Rocky(粤语-阿强)
-
-## 使用方法
-
-1. 在 Bob 中进行翻译或 OCR 识别
-2. 点击翻译结果旁的发音按钮
-3. 即可听到语音朗读
-
-## 注意事项
-
-- 需要有效的 DashScope API Key
-- 音频 URL 有效期 24 小时
-- Qwen3 系列单次最大 600 字符
-- Instruct/Flash 模型限流 180 RPM
-- 计费: 0.8 元/万字符
-
-## 更新日志
-
-### v2.0.0
-
-- 新增 Qwen3-TTS-Instruct-Flash 模型支持（指令控制语速/情感/音调）
-- 新增自定义模型名称输入，方便使用快照版本或新模型
-- 新增 `language_type` 合成语种配置，提升单语种合成质量
-- 新增语音指令和指令语义增强配置
-- 新增官方文档链接，方便查看最新模型和音色
-- 音色列表更新至 48 种，标注模型兼容性 [I]/[F]
-- 智能模型降级：音色不兼容时自动切换到最佳模型
-- 增强 HTTP 错误处理（401/403/429 精确识别）
-- 响应中附带 request_id 便于排查问题
+- [Qwen TTS API 说明](https://help.aliyun.com/zh/model-studio/qwen-tts)
+- [Qwen VL OCR API 说明](https://help.aliyun.com/zh/model-studio/qwen-vl-ocr)
 
 ## 许可证
 

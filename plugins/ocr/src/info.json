@@ -1,0 +1,82 @@
+{
+    "identifier": "com.qwen3.ocr.bob.plugin",
+    "version": "1.0.0",
+    "category": "ocr",
+    "name": "Qwen VL OCR",
+    "summary": "基于阿里云 Qwen-VL-OCR 模型的高精度文字识别，支持多语言和复杂排版",
+    "icon": "doc.text.magnifyingglass",
+    "author": "slowlyC",
+    "homepage": "https://github.com/slowlyC/qwen3-tts-plugin",
+    "appcast": "https://raw.githubusercontent.com/slowlyC/qwen3-tts-plugin/main/plugins/ocr/appcast.json",
+    "minBobVersion": "1.6.0",
+    "options": [
+        {
+            "identifier": "apiKey",
+            "type": "text",
+            "title": "API Key",
+            "desc": "必填。DashScope API Key，可在 https://dashscope.console.aliyun.com/ 申请。与 TTS 插件通用同一个 Key",
+            "textConfig": {
+                "type": "secure",
+                "height": 40,
+                "placeholderText": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+        },
+        {
+            "identifier": "region",
+            "type": "menu",
+            "title": "API 地域",
+            "defaultValue": "cn",
+            "desc": "国内用户选北京，海外用户选新加坡",
+            "menuValues": [
+                { "title": "北京 (国内)", "value": "cn" },
+                { "title": "新加坡 (国际)", "value": "intl" }
+            ]
+        },
+        {
+            "identifier": "model",
+            "type": "menu",
+            "title": "模型",
+            "defaultValue": "qwen-vl-ocr",
+            "desc": "稳定版适合日常使用，最新版可体验最新能力",
+            "menuValues": [
+                { "title": "Qwen-VL-OCR (稳定版，推荐)", "value": "qwen-vl-ocr" },
+                { "title": "Qwen-VL-OCR-Latest (最新版)", "value": "qwen-vl-ocr-latest" },
+                { "title": "自定义模型", "value": "custom" }
+            ]
+        },
+        {
+            "identifier": "customModel",
+            "type": "text",
+            "title": "自定义模型",
+            "defaultValue": "",
+            "desc": "仅在「模型」选项设置为「自定义模型」时生效。最新模型见: https://help.aliyun.com/zh/model-studio/qwen-vl-ocr",
+            "textConfig": {
+                "type": "visible",
+                "height": 40,
+                "placeholderText": "例: qwen-vl-ocr-2025-11-20"
+            }
+        },
+        {
+            "identifier": "timeout",
+            "type": "text",
+            "title": "超时时间 (秒)",
+            "defaultValue": "60",
+            "desc": "OCR 识别超时时间，范围 30-300 秒",
+            "textConfig": {
+                "type": "visible",
+                "placeholderText": "60"
+            }
+        },
+        {
+            "identifier": "docLink",
+            "type": "text",
+            "title": "官方文档",
+            "defaultValue": "https://help.aliyun.com/zh/model-studio/qwen-vl-ocr",
+            "desc": "查看最新模型和 API 说明，可选中复制到浏览器打开",
+            "textConfig": {
+                "type": "visible",
+                "height": 40
+            }
+        }
+    ]
+}
